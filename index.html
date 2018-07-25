@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Life Expectancy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale = 1.0, user-scalable = no">
+    <meta name="description" content="">
+    <meta name="author" content="Xin Qu">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="stylesheet" href="./css/reveal.css">
+    <link rel="stylesheet" href="./css/theme/simple.css">
+    <link rel = "stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/bubbles_area.css">
+    <link rel="stylesheet" href="./css/bubbles.css">
+    <link rel="stylesheet" href="./css/world_le.css">
+    <link rel="stylesheet" href="./css/scatter1.css">
+
+    <!--Load d3-->
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.6.7/d3-tip.js">	 </script>
+    <!-- Theme used for syntax highlighting of code -->
+    <!--
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    -->
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <style></style>
+</head>
+<body>
+    <!--
+    <div id="header">
+        <a href="#" class="navigate-left">Life Expectancy</a>
+    </div>
+    -->
+    <div class="reveal">
+        <div class="slides">
+            <section id="slide_1">
+                <!--content of slide 1-->
+                <div id="slide1">
+                    <h2>World Fact Sheet</h2>
+                    <p>Final Project for CS 498 Data Visualization</p>
+                    <p><small>Data source could be found through the link: <u><strong><a href="https://www.kaggle.com/fernandol/countries-of-the-world/data">WORLD FACT SHEET</a></strong></u> </small></p>
+                    <p><small>July 2018</small></p>
+                    <p><small>Tanvi Surana</small></p>
+                    <p align="justify"><small><em>Please <strong>MAXIMIZE</strong> the browser to optimize the view of slides, charts and tooltips. Text alignment may not work with IE explorer. Use Chrome for recommendation.</em></small></p>
+                </div>
+                <!-- end of content -->
+            </section>
+          <section id = "slide_2">
+                <!--content of slide 2-->
+                <h9>About this Visualization</h9>
+                <small>
+                    <p align = "justify">This visualization uses the Interactive Slideshow to tell the story of 
+                        <u><strong><a href="https://www.kaggle.com/fernandol/countries-of-the-world/data">WORLD.</a></strong></u> 
+                    Built on scenes following a template of visual consistency, with various annotations, parameters and some triggers (will be explained more in the next two slides). 
+                    More details of data cleaning information go here:   
+                    <em><strong><a href="#slide_4">ABOUT THE DATASET</a></strong></em> (slide 5).
+                    
+                    </p>
+                    <p align = "justify">
+                        The three scenes follow the structure as followings: 
+                        <li align="justify" style="font-size:90%">The first scene shows how the GDP impacts the number phones owned by people. With increase in GDP, the number of phones increases.</li>        
+                        <li align = "justify" style="font-size:90%">The first scene focuses on  shows a comparison between literacy rates and infant mortality rates</li>
+                        <li align="justify" style="font-size:90%">The second scene focuses that literacy rate increases, the death rate decreases.</li>    
+                    </p>
+                    <p align = "justify">  
+                        The three charts in this visualization:
+                        <li align = "justify" style="font-size:90%">Bar charts have been used to compare the literacy rates and how they impact infant mortality rates</li>
+                        <li align = "justify" style="font-size:90%">The scatterplot here is showing that countries where literacy is high have low death rates</li> 
+                        <li align = "justify" style="font-size:90%">The scatterplot here explains how with increase in GDP of a nation, the people owning phones increase</li>
+                    </p>
+                </small>
+                <!-- end of content -->
+            </section>
+            <section>
+                <!--content of slide 3-->
+                <h8>Elements of This Visualization</h8>
+                <small>
+                   <ol>
+                        <li class="fragment" data-fragment-index="1"><strong>Scenes</strong></li>
+                        <p class="fragment" data-fragment-index="2" align="justify">There are 16 slides, including four scenes with single chart of each scene in this presentation. 
+                            Each slide can be navigated through guiding arrows in the right bottom corner.
+                        Press <em><strong>Esc</strong></em> key at any point to get an overview of all slides.
+                        </p>
+                        <li class="fragment" data-fragment-index="3"><strong>Parameters</strong></li>
+                        <p class="fragment" data-fragment-index="4" align="justify">
+                            The main parameters of this story are <strong>Regions & Country names</strong>, corresponding value of <strong>Phones, GDP, infant mortality rates, service, industry, agriculture</strong> and <strong>Literacy</strong>.
+                        </p>
+                        <li class="fragment" data-fragment-index="5"><strong>Triggers</strong></li>
+                        <p class="fragment" data-fragment-index="6" align="justify"><strong>Legends</strong> in the scatter plot help us get data in the plot for that particular region of the world.
+                            The scatter plot has two <strong>buttons</strong>. One can be used to <strong>zoom</strong> into the graph and the other can be used to <strong>interchange the axes</strong>.
+                            The bar plots also have legends that help us understand the graph better
+                        </p>
+                    </ol>
+                </small>
+                    
+            </section>
+                <!-- end of content -->
+            <section>
+                <!--content of slide 3_2-->
+                <h8>Elements of This Visualization (continued)</h8>
+                <small>
+                    <p align="left">4. <strong>Annotations</strong>: including tooltips, legends and labels; follow a template of visual consistency. 
+                    </p>
+                    <p align = "justify" style="font-size: 85%"><strong>Trends</strong> of data in both line chart and bar chart show up by clicking the <em>"down"</em> arrow within the slide.</br>
+                        <strong>Tooltips</strong> follow a template for visual consistency (see file "tooltip.js" for details): </br>
+                        1. Tooltips in Gross Domestic Product and Phones scatter plot show the GDP value, number of phones value and the region name
+                        show up by moving mouse over a the plot. Tooltip disappears by moving mouse off a certain bubble. </br>
+                        2. Tooltips in bar chart shows up by moving mouse over a bar. When a tooltip shows up, the corresponding bar will be highlighted by 
+                        changing the filled color and changing stroke color to black. Tooltip disappears by moving mouse off a certain bar.
+                        <strong>Labels</strong>: </br>
+                        1. Labels in area donut chart shown in the center of each bubble with information of area name and corresponding average life expectancy.</br>
+                        2. Labels are present in both scatterplot and bar chart</br>
+                        <strong>Legends</strong>: </br>
+                        1. Legends for country in bar plots.</br>
+                        2. Legends in bar chart: assign original filled colors to Infant Mortality and Literacy.
+                        3. Legends have been used in donut charts for labelling service, agriculture and industry.
+                    </p> 
+                </small>
+                <!-- end of content -->
+            </section>
+            <section id = "slide_4">
+                <!--content of slide 4-->
+                <h4>About the dataset</h4>
+                <small align = "justify" style = "text-indent: 50px">All these data sets are made up of data from the US government. Generally they are free to use if you use the data in the US. If you are outside of the US, you may need to contact the US Govt to ask. Data from the World Factbook is public domain. The website says "The World Factbook is in the public domain and may be used freely by anyone at anytime without seeking permission." 
+                <a href="https://www.cia.gov/library/publications/the-world-factbook/docs/faqs.html">Reference</a>
+                </small>
+                <!-- end of content -->
+            </section>
+            <section>
+                <section>
+                    <!--content of vertical slide 1-->
+                    <small>Scroll Down to See the Visualisations</small>
+                  
+                    <!-- end of content -->
+                </section>
+                <section>
+                    <!--content of vertical slide 2-->
+                    <small> The first Graph showcases how the Gross Domestic Product impacts the number phones owned by people. With increase in Gross Domestic Product , the number of phones owned by people increases</small>
+                    <small style="font-size: 40%" align = "justify">
+                        <em>Different regions of the world have been represented with different colors
+                        </em>
+                    </small>
+                </section>
+                <section>
+                    <!--content of vertical slide 3-->
+                   <small align = "justify" style = "text-indent: 50px">Then the next slide presents the graph.
+                        The various reegions of the world have been classified on the basis of color
+                        <li><strong >Group 1</strong> color of blue is the region of ASIA</li>
+                        <li><strong >Group 2</strong> color of orange is the region of EASTERN EUROPE</li>
+                        <li><strong >Group 3</strong> color of green is the region of NORTH AFRICA</li>
+                        <li><strong >Group 4</strong> color of red is the region of OCEANIA</li>
+                        <li><strong >Group 5</strong> color of purple is the region of Western Europe</li>
+                       
+                    </small>
+                    <!-- end of content -->
+                </section>
+                <section>
+                    <!--content of vertical slide 6-->
+                    <small>Imapct of Gross Domestic Product on the Phones of owned</small>
+                    <!--div id='stackedbar'></div-->
+					<div id='scatter1'></div>
+					<button class="reset" >Reset Zoom</button>
+                    <button class="changexlos">X-Axis: Phones</button>	
+                    <small style="font-size: 40%" align = "justify">
+                            <em>Move mouse over a bar to show the different highlighted colors and the tooltips. Move mouse off a bar to clear the tooltip. More details in previous slide.
+                            </em>           
+                    </small>
+                    <small class="fragment" data-fragment-index="1" align="justify" style="font-size :50%"> Thus from the scatter plot it is evident that an increase in literacy is proportional to the number of phones being bought by people
+                    </small>
+                    
+                    <!-- end of content -->
+                </section>
+                 <section>
+                    <!--content of vertical slide 3-->
+                   <small align = "justify" style = "text-indent: 50px">
+                       The next graph presents a comparison between literacy rates and infant mortality rates. It has horizontal bar plots which effectively shows that the countries with higher literacy rates have low infant mortality rates.
+                    </small>
+                    <!-- end of content -->
+                </section>
+                <section>
+   
+                    <div id='bar4'>
+                    <small>Bar graphs comparing Literacy and Infant Mortality Rates On the basis of Countries</small>
+					<iframe src="index4.html" name="targetframe" allowTransparency="true" scrollbar="yes" frameborder="0" height="450" width="1300" > </iframe>
+                        <small style="font-size: 40%" align = "justify">
+                            <em>Move mouse over a bar to show the different highlighted colors and the tooltips. Move mouse off a bar to clear the tooltip. Move the scroll bar to view the whole graph
+                            </em>           
+                    </small>
+                     <small class="fragment" data-fragment-index="1" align="justify" style="font-size :50%"> Thus from the bar graphs it is evident that with an increase in literacy, the infant mortality rates declines as the healthcare becomes better.
+                    </small>    
+					</div>
+                </section>
+                <section>
+                    <!--content of vertical slide 3-->
+                   <small align = "justify" style = "text-indent: 50px">
+                       The next graph contains two donut charts comparing the factors that contribute to GDP, namely agriculture, services and industry. It draws out a comparison beween two nations of the Sub Saharan Region having the highest and the lowest GDP.
+                    </small>
+                    <!-- end of content -->
+                </section>
+                <section>
+   
+                    <div id='bar4'>
+                    <small>Donut Charts Comparing Agriculture, Industry and Services</small>
+					<iframe src="pi-chart.html" name="targetframe" allowTransparency="true" frameborder="0" height="500" width="1300" > </iframe>
+                        <small style="font-size: 40%" align = "justify">
+                            <em>Move mouse over a bar to show the different highlighted colors and the tooltips. Move mouse off a bar to clear the tooltip. Move the scroll bar to view the whole graph
+                            </em>           
+                    </small>
+                     <small class="fragment" data-fragment-index="1" align="justify" style="font-size :50%"> On Comparing the two countries we notice as the country develops, people working in agriculture reduces and increases in industry and service
+                    </small>    
+					</div>
+                </section>
+                <section>
+                    <!--content of vertical slide 3-->
+                   <small align = "justify" style = "text-indent: 50px">
+                       The next graph presents a comparison between literacy rates and infant mortality rates. It has scatter which effectively shows that the countries with higher literacy rates have low infant mortality rates.
+                    </small>
+                    <!-- end of content -->
+                </section>
+                <section>
+                    <!--content of vertical slide 6-->
+                    <small>Impact of Literacy of Infant Mortality Rates</small>
+                    <!--div id='stackedbar'></div-->
+					<div id='scatter2'></div>
+					<button class="reset2" >Reset Zoom</button>
+                </section>
+                
+            </section>
+           
+        </section>
+            <section>
+                <!--content of vertical slide 4-->
+                <h3>The end</h3>
+                <small align = "left">
+                    Thanks to 
+                    <li align = "justify" style="font-size:90%">Hakimel for reveal.js <a href="https://revealjs.com/#/"></a></li>
+                    <li align = "justify" style="font-size:90%">Data Bank for data source</li>
+                </small>
+            </section>
+        </div>
+    </div>
+    <script src="./js/reveal.js"></script>
+    <script>Reveal.initialize();</script>
+    <script src="./js/tooltip.js"></script>
+
+
+    <script src = "./js/bar_test.js"></script>
+    <script src="./js/bubbles_area.js"></script>
+    <script src="./js/world_le.js"></script>
+   
+    <script src="./js/bubbles.js"></script>
+    <script src="./js/scatter1.js"></script>
+    <script src="./js/scatter2.js"></script>
+    
+    
+    <!--
+    <script src="./js/japan.js"></script>
+    -->
+    
+</body>
+</html>

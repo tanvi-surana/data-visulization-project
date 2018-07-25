@@ -1,0 +1,43 @@
+.category-name {
+    font-size: 20px;
+    margin: 0 !important;
+}
+.key-dot {
+    display: inline-block;
+    height: 12px;
+    margin-right: 0.5em;
+    width: 12px;
+}
+.Avg85 { background: blue}
+.Avg75 { background: #dc3912}
+.Avg71 { background: #ff9900 }
+.Avg51{ background: #00a388}
+
+.Japan { background: steelblue}
+.Sierra_Leone { background: green}
+
+#categoryLegend{
+    overflow:hidden;
+    font-size: 15px;
+    }
+#backh2{
+    color: antiquewhite;
+}
+#smallBack{
+    color: navajowhite;
+    font-style: italic;
+}
+.categoryLegend {
+    float: left;
+    margin-right: 1em;
+}
+.area{
+    fill: rgb(255, 0, 128);
+    fill-opacity: 0.6;
+    clip-path: url(#clip);
+}
+.zoom {
+    cursor: move;
+    fill: none;
+    pointer-events: all;
+}

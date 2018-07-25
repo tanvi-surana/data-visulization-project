@@ -1,0 +1,52 @@
+.chart {
+    background-color: #eee;
+}
+
+.chart rect {
+	stroke: white;
+    fill: steelblue;
+}
+
+.axis {
+    shape-rendering: crispEdges;
+}
+
+.x.axis line {
+    stroke: black;
+}
+
+.y.axis line {
+    stroke: black;
+}
+
+.axis text {
+    font-size: 12px;
+}
+
+
+
+div#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 24px 0 0 0;
+    pointer-events: none;
+}
+
+div#header a {
+    font-family: 'hero_lightlight';
+    font-size: 23px;
+    color: #FFF;
+    text-decoration: none;
+    margin: 0 0 0 104px;
+    letter-spacing: -1px;
+    float: left;
+    pointer-events: all;
+}
+
+
+#slide1 p {
+    font-size: 20px;
+}

@@ -40,12 +40,12 @@ rect.disabled {                                                 /* NEW */
     <div style="display: flex; width: 60%;height: 30%">
         <div>
             <center style="font-size: 30;padding-top: 10%;padding-left: 10">Mauritius</center>
-            <small style="padding-left: 100">Country with highest GDP in the SUB SAHARAN REGION</small>
+            <small style="padding-left: 10%">Country with highest GDP in the SUB SAHARAN REGION</small>
             <div style="margin:75px;"  id="chart"></div>
         </div>
         <div>
              <center style="font-size: 30;padding-top: 10%;padding-left: 10">Sierra Leone</center>
-             <small style="padding-left: 100">Country with lowest GDP in the SUB SAHARAN REGION</small>
+             <small style="padding-left: 10%">Country with lowest GDP in the SUB SAHARAN REGION</small>
             <div style="margin:75px;"  id="chart1"></div>
         </div>    
     </div> 
@@ -60,7 +60,7 @@ rect.disabled {                                                 /* NEW */
 	function renderPieChart (dataset,dom_element_to_append_to, colorScheme){
 
 		var margin = {top:10,bottom:10,left:10,right:10};
-		var width = 350 - margin.left - margin.right,
+		var width = 250 - margin.left - margin.right,
 		height = width,
 		radius = Math.min(width, height) / 2;
 		var donutWidth = 60;
